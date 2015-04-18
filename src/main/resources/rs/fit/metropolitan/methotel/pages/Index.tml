@@ -1,0 +1,108 @@
+<html t:type="layout" title="it250-metAir Index"
+      t:sidebarTitle="Framework Version"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+    <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <!-- Main content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 paddings">
+
+          <h1 class="yellowgreen">Welcome to MetHotels Services</h1>
+          <p>
+          MetHotels Services is commited to making our environment a germ free, dust mite free and healthy place to live in. 
+          </p>
+          <p>
+          What's the most beautiful part about life? Its purity. The kind of purity that keeps you at your best health so that you can follow your heart, your dreams and your goals. At MetHotels, we believe that to maintain this purity of life and sustain great health, you need more than just everyday cleaning. Born out the need to create environments that support pure living, MetHotels brings you innovative mattress cleaning systems.
+          </p>
+          <p>
+          <b>
+          Well, that’s about us for starters. If you would like to know more about our services, take a virtual tour of our website or even better, write in to us. We would love to hear from you.
+          </b>
+          </p>
+        </div>
+        <div class="col-md-5 paddings">
+
+          <div class="reservation">
+            <h2>MAKE A RESERVATION</h2>
+
+            Select hotel
+            <select class="form-control">
+              <option value="one">Hotel Supreme</option>
+              <option value="two">Hotel Dubai</option>
+              <option value="three">Hotel Freelabl</option>
+              <option value="four">Hotel Sophy</option>
+              <option value="five">Hotel Indianapolis</option>
+            </select>
+
+            Rooms
+              <select class="form-control">
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4</option>
+                <option value="five">5</option>
+              </select>
+
+            Adults
+              <select class="form-control">
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4</option>
+                <option value="five">5</option>
+              </select>
+
+            Children
+              <select class="form-control">
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4</option>
+                <option value="five">5</option>
+              </select>
+
+            <button class="btn btn-large" style="margin: 20px 0px 20px 0px; color: black;">Check availability</button>
+
+          </div>
+        </div>
+      </div>
+
+
+        <!-- Row blocks -->
+        <div class="row">
+          <div class="col-md-4 parts">
+            <h2 class="yellowgreen">Who We Are?</h2>
+
+            <p>Set up in 1995 in Australia, MetHotels parted waters to set shop in.. <a href="#">Read More ></a></p>
+                
+            <img src="${asset:context:images/globe.jpg}" />
+          </div>
+          <div class="col-md-4 parts">
+            <h2 class="yellowgreen">Benefits</h2>
+
+            <p>Some of the problems and diseases that can be prevented are.. <a href="#">Read More ></a></p>
+
+            <img src="${asset:context:images/child-sleeping.jpg}" />
+          </div>
+          <div class="col-md-4 parts">
+
+          <h2 class="yellowgreen">Working With Us</h2>
+
+          <p>
+          New minds and new successes go hand in hand!<br/><br/>
+
+          We are a company that believes in ideas. It's what drives us every single day; and we constantly seek people that bring new ways to think, connect and succed to the table. <br/><br/>
+
+          Come join us and be a part of the Allerx name. 
+
+          <a href="#">Apply now ></a>
+          </p>
+
+          </div>
+        </div>
+    </div>
+</html>

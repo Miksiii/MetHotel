@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+        >
+<head>
+    <meta charset="utf-8" />
+    <title>${title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Custom css -->
+    <link href="${context:mybootstrap/css/app.css}" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- js includes -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="${asset:context:/favicon.ico}" />
+</head>
+
+<body>
+
+    <!-- header -->
+    <div class="container-full header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 header-line">
+              <a class="brand" href="#"><img src="${asset:context:images/metro-logo.png}" class="brandy" /></a>
+           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- future slider -->
+    <div class="container-full slider">
+      <img src="${asset:context:images/slider1.jpg}" />
+    </div>
+
+    <!-- navigation -->
+    <div class="container-full menu">
+      <div class="container">
+        <nav class="navbar navbar-default"> 
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">About</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Services <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="SobaDodavanje">Sobe</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <t:alerts/>
+            </div>
+        </div>
+    </div>
+
+    <!-- main content -->
+    <div class="container">
+        <t:body />
+        <!-- Row Footer -->
+        <div class="row">
+          <div class="col-md-8">
+            <footer>
+              <p>
+              Copyright © 2015 <b>MetHotels - Hotel Services LLC</b>. All right reserved. 
+              </p>
+            </footer>
+          </div>  
+        </div>
+    </div> <!-- /container -->
+
+</body>
+</html>
