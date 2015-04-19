@@ -16,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import org.apache.tapestry5.beaneditor.Validate;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 /**
@@ -34,18 +35,23 @@ public class Soba implements Serializable {
     @Column(name = "soba_id")
     private Integer sobaId;
     @Basic(optional = false)
+    @Validate("required, minLength=5, maxLength=20")
     @Column(name = "soba_ime")
     private String sobaIme;
     @Basic(optional = false)
+    @Validate("required")
     @Column(name = "soba_sprat")
     private int sobaSprat;
     @Basic(optional = false)
+    @Validate("none")
     @Column(name = "soba_tv")
     private boolean sobaTv;
     @Basic(optional = false)
+    @Validate("none")
     @Column(name = "soba_internet")
     private boolean sobaInternet;
     @Basic(optional = false)
+    @Validate("none")
     @Column(name = "soba_djakuzi")
     private boolean sobaDjakuzi;
 

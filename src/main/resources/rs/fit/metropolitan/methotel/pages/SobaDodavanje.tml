@@ -4,8 +4,8 @@
       xmlns:p="tapestry:parameter">
       
       <!-- Prikaz forme na osnovu atributa klase Soba -->
-      <t:beaneditform object="soba" exclude="soba_id"/>
+      <t:beaneditform object="soba" exclude="sobaId"/>
 
       <!-- Prikaz dgv liste svih soba -->
-      <t:grid t:source="listaSoba" exclude="soba_id"/>
+      <t:grid t:source="listaSoba"/>
 </html>
