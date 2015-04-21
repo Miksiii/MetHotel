@@ -7,10 +7,12 @@
 package rs.fit.metropolitan.methotel.pages;
 
 import java.util.ArrayList;
+import java.util.List;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Session;
+import rs.fit.metropolitan.methotel.dao.ISobaDAO;
 import rs.fit.metropolitan.methotel.entities.Soba;
 
 /**
@@ -22,9 +24,9 @@ public class SobaDodavanje {
     @Property
     private Soba soba;
     @Property
-    private ArrayList<Soba> listaSoba;
-    @Inject
-    private Session session;
+    private List<Soba> listaSoba;
+    @Inject 
+    private ISobaDAO sobaDAO;
     
     
     /**
@@ -37,7 +39,7 @@ public class SobaDodavanje {
         }
         
         // selektuj sve sobe i smesti ih uz listu
-        listaSoba = (ArrayList<Soba>) session.createCriteria(Soba.class).list();
+        listaSoba = sobaDAO.getListaSoba();
     }
     
     /**
@@ -46,7 +48,7 @@ public class SobaDodavanje {
      */
     @CommitAfter
     Object onSuccess() {
-        session.persist(soba);
+        sobaDAO.addSobu(soba);
         return this;
     }
 }
