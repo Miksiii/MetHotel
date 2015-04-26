@@ -1,0 +1,29 @@
+<html t:type="layout" title="Dodavanje Soba | Met Hotel"
+      t:sidebarTitle="Framework Version"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+      <!-- Prikaz forme na osnovu atributa klase Soba -->
+      <t:beaneditform 
+        object="rezervacija" 
+        exclude="rezervacijaId" add="hotelId"
+        reorder="hotelId, rezervacijaOd, rezervacijaDo"
+      >
+      <p:hotelId>
+        <t:label for="hotelId"/>:
+        <t:select 
+          t:blankLabel="Odaberi hotel" 
+          t:id="hotelId" 
+          encoder="encoder" 
+          model="listaHotela" 
+          validate="required" />
+      </p:hotelId>
+      </t:beaneditform>
+
+      DELETING:
+      <t:grid t:source="listaRezervacija" add="delete" row="rezervacijaone">
+        <p:deleteCell>
+            <t:actionlink t:id="delete" context="rezervacijaone.rezervacijaId">Delete</t:actionlink>
+        </p:deleteCell>
+      </t:grid>
+</html>

@@ -8,4 +8,11 @@
 
       <!-- Prikaz dgv liste svih soba -->
       <t:grid t:source="listaSoba"/>
+
+      DELETING:
+      <t:grid t:source="listaSoba" add="delete" row="onesoba">
+        <p:deleteCell>
+            <t:actionlink t:id="delete" context="onesoba.sobaId">Delete</t:actionlink>
+        </p:deleteCell>
+      </t:grid>
 </html>

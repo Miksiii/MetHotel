@@ -11,7 +11,6 @@ import java.util.List;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.annotations.Inject;
-import org.hibernate.Session;
 import rs.fit.metropolitan.methotel.dao.ISobaDAO;
 import rs.fit.metropolitan.methotel.entities.Soba;
 
@@ -19,8 +18,7 @@ import rs.fit.metropolitan.methotel.entities.Soba;
  *
  * @author Milan
  */
-public class SobaDodavanje {
-    
+public class Test {
     @Property
     private Soba soba;
     @Property
@@ -30,34 +28,20 @@ public class SobaDodavanje {
     @Inject 
     private ISobaDAO sobaDAO;
     
-    
-    /**
-     * Priprema za renderovanje na osnovu TML sadrzaja. Ucitavanje promenljivih
-     * sadrzaja iz TML-a.
-     */
     void onActivate() {
         if(listaSoba == null) {
             listaSoba = new ArrayList<Soba>();
         }
         
-        // selektuj sve sobe i smesti ih uz listu
         listaSoba = sobaDAO.getListaSoba();
     }
     
-    /**
-     * Validacija je uspesno zavrsena
-     * @return 
-     */
     @CommitAfter
     Object onSuccess() {
-        sobaDAO.addSobu(soba);
+        //sobaDAO.addSobu(soba);
+        soba = sobaDAO.getSobaById(soba.getSobaId());
+        System.out.println("~ALALLALALALALLAL" + soba.getSobaIme());
         return this;
     }
     
-    @CommitAfter
-    Object onActionFromDelete(int id)
-    {
-        sobaDAO.deleteSoba(id);
-        return this;
-    }
 }

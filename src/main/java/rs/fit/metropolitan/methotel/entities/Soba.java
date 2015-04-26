@@ -16,7 +16,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import org.apache.tapestry5.beaneditor.Validate;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 /**
@@ -32,28 +31,18 @@ public class Soba implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "soba_id")
+    @Column(name = "SOBA_ID")
     private Integer sobaId;
-    @Basic(optional = false)
-    @Validate("required, minLength=5, maxLength=20")
-    @Column(name = "soba_ime")
+    @Column(name = "SOBA_IME")
     private String sobaIme;
-    @Basic(optional = false)
-    @Validate("required")
-    @Column(name = "soba_sprat")
-    private int sobaSprat;
-    @Basic(optional = false)
-    @Validate("none")
-    @Column(name = "soba_tv")
-    private boolean sobaTv;
-    @Basic(optional = false)
-    @Validate("none")
-    @Column(name = "soba_internet")
-    private boolean sobaInternet;
-    @Basic(optional = false)
-    @Validate("none")
-    @Column(name = "soba_djakuzi")
-    private boolean sobaDjakuzi;
+    @Column(name = "SOBA_SPRAT")
+    private Integer sobaSprat;
+    @Column(name = "SOBA_TV")
+    private Boolean sobaTv;
+    @Column(name = "SOBA_INTERNET")
+    private Boolean sobaInternet;
+    @Column(name = "SOBA_DJAKUZI")
+    private Boolean sobaDjakuzi;
 
     @Inject
     public Soba() {
@@ -61,15 +50,6 @@ public class Soba implements Serializable {
 
     public Soba(Integer sobaId) {
         this.sobaId = sobaId;
-    }
-
-    public Soba(Integer sobaId, String sobaIme, int sobaSprat, boolean sobaTv, boolean sobaInternet, boolean sobaDjakuzi) {
-        this.sobaId = sobaId;
-        this.sobaIme = sobaIme;
-        this.sobaSprat = sobaSprat;
-        this.sobaTv = sobaTv;
-        this.sobaInternet = sobaInternet;
-        this.sobaDjakuzi = sobaDjakuzi;
     }
 
     public Integer getSobaId() {
@@ -88,35 +68,35 @@ public class Soba implements Serializable {
         this.sobaIme = sobaIme;
     }
 
-    public int getSobaSprat() {
+    public Integer getSobaSprat() {
         return sobaSprat;
     }
 
-    public void setSobaSprat(int sobaSprat) {
+    public void setSobaSprat(Integer sobaSprat) {
         this.sobaSprat = sobaSprat;
     }
 
-    public boolean getSobaTv() {
+    public Boolean getSobaTv() {
         return sobaTv;
     }
 
-    public void setSobaTv(boolean sobaTv) {
+    public void setSobaTv(Boolean sobaTv) {
         this.sobaTv = sobaTv;
     }
 
-    public boolean getSobaInternet() {
+    public Boolean getSobaInternet() {
         return sobaInternet;
     }
 
-    public void setSobaInternet(boolean sobaInternet) {
+    public void setSobaInternet(Boolean sobaInternet) {
         this.sobaInternet = sobaInternet;
     }
 
-    public boolean getSobaDjakuzi() {
+    public Boolean getSobaDjakuzi() {
         return sobaDjakuzi;
     }
 
-    public void setSobaDjakuzi(boolean sobaDjakuzi) {
+    public void setSobaDjakuzi(Boolean sobaDjakuzi) {
         this.sobaDjakuzi = sobaDjakuzi;
     }
 
@@ -142,7 +122,7 @@ public class Soba implements Serializable {
 
     @Override
     public String toString() {
-        return "rs.fit.metropolitan.metmodel.entities.Soba[ sobaId=" + sobaId + " ]";
+        return "rs.fit.metropolitan.methotel.entities.Soba[ sobaId=" + sobaId + " ]";
     }
     
 }

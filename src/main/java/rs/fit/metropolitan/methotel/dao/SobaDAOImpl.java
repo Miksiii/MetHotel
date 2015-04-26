@@ -9,6 +9,7 @@ package rs.fit.metropolitan.methotel.dao;
 import java.util.List;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 import rs.fit.metropolitan.methotel.entities.Soba;
 
 /**
@@ -28,6 +29,17 @@ public class SobaDAOImpl implements ISobaDAO {
     @Override
     public void addSobu(Soba soba) {
         session.persist(soba);
+    }
+
+    @Override
+    public Soba getSobaById(Integer id) {
+        return (Soba) session.createCriteria(Soba.class).add(Restrictions.eq("sobaId", id)).uniqueResult();
+    }
+
+    @Override
+    public void deleteSoba(Integer id) {
+        Soba soba = (Soba) session.createCriteria(Soba.class).add(Restrictions.eq("sobaId", id)).uniqueResult();
+        session.delete(soba);
     }
     
 }

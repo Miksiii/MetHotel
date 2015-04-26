@@ -15,7 +15,11 @@ import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.StackExtension;
 import org.apache.tapestry5.services.javascript.StackExtensionType;
 import org.slf4j.Logger;
+import rs.fit.metropolitan.methotel.dao.HotelDAOImpl;
+import rs.fit.metropolitan.methotel.dao.IHotelDAO;
+import rs.fit.metropolitan.methotel.dao.IRezervacijaDAO;
 import rs.fit.metropolitan.methotel.dao.ISobaDAO;
+import rs.fit.metropolitan.methotel.dao.RezervacijaDAOImpl;
 import rs.fit.metropolitan.methotel.dao.SobaDAOImpl;
 
 /**
@@ -27,7 +31,8 @@ public class AppModule
     public static void bind(ServiceBinder binder)
     {
         binder.bind(ISobaDAO.class, SobaDAOImpl.class);
-
+        binder.bind(IRezervacijaDAO.class, RezervacijaDAOImpl.class);
+        binder.bind(IHotelDAO.class, HotelDAOImpl.class);
         // Make bind() calls on the binder object to define most IoC services.
         // Use service builder methods (example below) when the implementation
         // is provided inline, or requires more initialization than simply

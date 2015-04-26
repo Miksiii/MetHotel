@@ -6,16 +6,14 @@
 
 package rs.fit.metropolitan.methotel.dao;
 
-import rs.fit.metropolitan.methotel.entities.Soba;
 import java.util.List;
+import rs.fit.metropolitan.methotel.entities.Hotel;
 
 /**
  *
  * @author Milan
  */
-public interface ISobaDAO {
-    public List<Soba> getListaSoba();
-    public void addSobu(Soba soba);
-    public Soba getSobaById(Integer id);
-    public void deleteSoba(Integer id);
+public interface IHotelDAO {
+    public Hotel getHotelById(Integer id);
+    public List<Hotel> getHotels();
 }
