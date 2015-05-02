@@ -10,6 +10,7 @@ import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.ioc.annotations.*;
 import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.SymbolConstants;
+import rs.fit.metropolitan.methotel.entities.Korisnik;
 
 /**
  * Layout component for pages of application test-project.
@@ -34,7 +35,8 @@ public class Layout
 	@Inject
 	@Symbol(SymbolConstants.APPLICATION_VERSION)
 	private String appVersion;
-
+        @SessionState
+        private Korisnik ulogovanKorisnik;
 
 
 	public String getClassForPageName()
@@ -48,5 +50,17 @@ public class Layout
 	{
 		return new String[]{"Index", "About", "Contact"};
 	}
+        
+        public boolean getLoggedIn() {
+            if (ulogovanKorisnik.getKorisnikEmail() != null) {
+                System.out.println("~~" + ulogovanKorisnik.getKorisnikIme());
+                return true;
+            }
+            return false;
+        }
+        
+        public void onActionFromLogout() {
+            ulogovanKorisnik = null;
+        }
 
 }

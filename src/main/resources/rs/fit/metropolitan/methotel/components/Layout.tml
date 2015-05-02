@@ -62,6 +62,7 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">HOME <span class="sr-only">(current)</span></a></li>
                 <li><a href="KorisnikRegistracija">REGISTRACIJA <span class="sr-only">(current)</span></a></li>
+                <li><a href="KorisnikLogin">LOGIN <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">ABOUT</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">SERVICES <span class="caret"></span></a>
@@ -70,6 +71,14 @@
                     <li><a href="RezervacijaDodavanje">REZERVACIJE</a></li>
                   </ul>
                 </li>
+                <t:if test="!loggedIn">
+                  <li>
+                    <t:pagelink page="KorisnikLogin" style="float:right;">Sign in</t:pagelink>
+                  </li>
+                  </t:if>
+                    <t:if test="loggedIn">
+                    <t:actionlink t:id="logout" style="float:right;">Logout</t:actionlink>
+                </t:if>
               </ul>
 
             </div><!-- /.navbar-collapse -->
@@ -100,6 +109,5 @@
           </div>  
         </div>
     </div> <!-- /container -->
-
 </body>
 </html>
