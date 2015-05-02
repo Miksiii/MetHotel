@@ -1,0 +1,9 @@
+<html 
+t:type="layout" title="MetHotel | Registracija"
+t:sidebarTitle="Framework Version"
+xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+xmlns:p="tapestry:parameter">
+<t:beaneditform t:id="form" object="korisnik" exclude="korisnikId, korisnikRola">
+<t:errors/>
+</t:beaneditform>
+</html>
