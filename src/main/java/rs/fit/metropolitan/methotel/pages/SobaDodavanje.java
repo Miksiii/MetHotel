@@ -8,17 +8,17 @@ package rs.fit.metropolitan.methotel.pages;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.security.RolesAllowed;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Session;
 import rs.fit.metropolitan.methotel.dao.ISobaDAO;
 import rs.fit.metropolitan.methotel.entities.Soba;
+import rs.fit.metropolitan.methotel.services.ProtectedPage;
 
-/**
- *
- * @author Milan
- */
+@ProtectedPage
+@RolesAllowed(value={"Admin"})
 public class SobaDodavanje {
     
     @Property

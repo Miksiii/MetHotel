@@ -6,6 +6,7 @@
 
 package rs.fit.metropolitan.methotel.pages;
 
+import javax.annotation.security.RolesAllowed;
 import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.annotations.SessionState;
@@ -15,11 +16,10 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import rs.fit.metropolitan.methotel.dao.IKorisnikDAO;
 import rs.fit.metropolitan.methotel.data.Role;
 import rs.fit.metropolitan.methotel.entities.Korisnik;
+import rs.fit.metropolitan.methotel.services.ProtectedPage;
 
-/**
- *
- * @author Milan
- */
+@ProtectedPage
+@RolesAllowed(value={"Korisnik"})
 public class KorisnikRegistracija {
     @Property
     private Korisnik korisnik;

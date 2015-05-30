@@ -8,6 +8,7 @@ package rs.fit.metropolitan.methotel.pages;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.security.RolesAllowed;
 import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
@@ -17,11 +18,10 @@ import rs.fit.metropolitan.methotel.dao.IRezervacijaDAO;
 import rs.fit.metropolitan.methotel.entities.Hotel;
 import rs.fit.metropolitan.methotel.entities.Rezervacije;
 import rs.fit.metropolitan.methotel.entities.Soba;
+import rs.fit.metropolitan.methotel.services.ProtectedPage;
 
-/**
- *
- * @author Milan
- */
+@ProtectedPage
+@RolesAllowed(value={"Admin"})
 public class RezervacijaDodavanje {
     
     @Property

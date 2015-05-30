@@ -152,4 +152,9 @@ public class AppModule
 
         configuration.add("Timing", filter);
     }
+    
+    public void contributeComponentRequestHandler(OrderedConfiguration<ComponentRequestFilter> 
+        configuration) {
+        configuration.addInstance("PageProtectionFilter", PageProtectionFilter.class);
+    }
 }
