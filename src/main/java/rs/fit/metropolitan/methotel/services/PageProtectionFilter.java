@@ -30,7 +30,7 @@ import org.slf4j.Logger;
 
 /**
  *
- * @author Milos
+ * @author Milan
  */
 public class PageProtectionFilter implements ComponentRequestFilter {
 

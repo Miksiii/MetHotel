@@ -41,5 +41,10 @@ public class SobaDAOImpl implements ISobaDAO {
         Soba soba = (Soba) session.createCriteria(Soba.class).add(Restrictions.eq("sobaId", id)).uniqueResult();
         session.delete(soba);
     }
+
+    @Override
+    public Soba addOrUpdate(Soba soba) {
+        return (Soba) session.merge(soba);
+    }
     
 }

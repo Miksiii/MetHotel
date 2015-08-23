@@ -1,0 +1,17 @@
+<html t:type="layout" title="TapestryHibernateDemo Index"
+ t:sidebarTitle="Framework Version"
+ xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+ xmlns:p="tapestry:parameter">
+ <t:beaneditform object="newSoba" exclude="id" >
+ </t:beaneditform>
+
+ <t:jquery.datatable source="sobaList" exclude="sobaId" add="edit,delete" t:options="options"
+row="selectedSoba">
+ <p:editCell>
+ <t:actionlink t:id="edit" context="selectedSoba">Edit</t:actionlink>
+ </p:editCell>
+ <p:deleteCell>
+ <t:actionlink t:id="delete" context="selectedSoba.sobaId">Delete</t:actionlink>
+ </p:deleteCell>
+ </t:jquery.datatable>
+</html>

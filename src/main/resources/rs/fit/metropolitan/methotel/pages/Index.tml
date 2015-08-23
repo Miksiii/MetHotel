@@ -67,6 +67,10 @@
 
             <button class="btn btn-large" style="margin: 20px 0px 20px 0px; color: black;">Check availability</button>
 
+            <p>
+            <t:hotelcomp adults="4" children="2" rooms="1"/>
+            </p>
+
           </div>
         </div>
       </div>
