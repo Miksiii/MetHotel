@@ -1,0 +1,14 @@
+<html t:type="layout" title="TapestryHibernateDemo Index"
+ t:sidebarTitle="Framework Version"
+ xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+ xmlns:p="tapestry:parameter">
+ <body>
+
+ Pretraga: 
+ <input type="text" id="pretraga" />
+
+ <hr/>
+
+ <div id="table"><!-- content here --></div>
+ </body>
+</html>

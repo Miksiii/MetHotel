@@ -12,7 +12,7 @@
       DELETING:
       <t:grid t:source="listaSoba" add="delete" row="onesoba">
         <p:deleteCell>
-            <t:actionlink t:id="delete" context="onesoba.sobaId">Delete</t:actionlink>
+            <t:actionlink t:id="delete" context="onesoba.sobaId" t:mixins="confirmation">Delete</t:actionlink>
         </p:deleteCell>
       </t:grid>
 </html>

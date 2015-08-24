@@ -19,4 +19,7 @@ public interface ISobaDAO {
     public Soba getSobaById(Integer id);
     public void deleteSoba(Integer id);
     public Soba addOrUpdate(Soba soba);
+    public int countAllSobe();
+    public List<Soba> fetchSobeFromPage(int pageNum);
+    public List<Soba> findByName(String name);
 }

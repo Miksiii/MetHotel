@@ -8,7 +8,10 @@ package rs.fit.metropolitan.methotel.dao;
 
 import java.util.List;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import rs.fit.metropolitan.methotel.entities.Soba;
 
@@ -45,6 +48,26 @@ public class SobaDAOImpl implements ISobaDAO {
     @Override
     public Soba addOrUpdate(Soba soba) {
         return (Soba) session.merge(soba);
+    }
+
+    @Override
+    public int countAllSobe() {
+        Long counter = (Long) session.createCriteria(Soba.class).setProjection(Projections.rowCount()).uniqueResult();
+        return counter.intValue();
+    }
+
+    @Override
+    public List<Soba> fetchSobeFromPage(int pageNum) {
+        int page = (pageNum - 1) * 20;
+        List<Soba> sobaList = session.createCriteria(Soba.class).setFirstResult(page).setMaxResults(20).addOrder(Order.asc("id")).setResultTransformer(
+                Criteria.DISTINCT_ROOT_ENTITY).list();
+        return sobaList;
+    }
+
+    @Override
+    public List<Soba> findByName(String name) {
+        List<Soba> sobaList = session.createCriteria(Soba.class).add(Restrictions.ilike("sobaIme", name + "%")).list();
+        return sobaList;
     }
     
 }
