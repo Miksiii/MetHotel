@@ -1,0 +1,34 @@
+<html t:type="layout" title="add new drzava here!"
+ xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+ xmlns:p="tapestry:parameter">
+
+<!-- form zone -->
+<t:zone t:id="zoneForm">
+  <t:beaneditform object="newHotel" t:zone="zoneGrid" exclude="hotelId">
+  </t:beaneditform>
+</t:zone>
+
+<!-- grid zone -->
+<t:zone t:id="zoneGrid">
+  <t:grid source="hotelList" t:inplace="true" exclude="hotelId" add="edit, delete" row="selectedHotel" t:options="options">
+
+    <p:hotelImeCell>
+        <div t:id="hotelIme" value="selectedHotel.hotelIme" t:type="jquery/inPlaceEditor" t:context="selectedHotel.hotelId"/>
+    </p:hotelImeCell>
+
+    <p:hotelBrojSobaCell>
+        <div t:id="hotelBrojSoba" value="selectedHotel.hotelBrojSoba" t:type="jquery/inPlaceEditor" t:context="selectedHotel.hotelId"/>
+    </p:hotelBrojSobaCell>
+
+    <p:editCell> 
+        <t:actionlink t:id="edit" t:zone="zoneForm" context="selectedHotel">Edit</t:actionlink>
+    </p:editCell>
+
+    <p:deleteCell>
+      <t:actionlink t:id="delete" t:zone="zoneGrid" context="selectedHotel.hotelId">Delete</t:actionlink>
+    </p:deleteCell>
+
+  </t:grid>
+</t:zone>
+
+</html>

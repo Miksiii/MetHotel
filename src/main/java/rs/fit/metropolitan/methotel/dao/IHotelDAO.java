@@ -16,4 +16,6 @@ import rs.fit.metropolitan.methotel.entities.Hotel;
 public interface IHotelDAO {
     public Hotel getHotelById(Integer id);
     public List<Hotel> getHotels();
+    public Hotel addOrUpdate(Hotel hotel);
+    public void deleteDrzava(int id);
 }

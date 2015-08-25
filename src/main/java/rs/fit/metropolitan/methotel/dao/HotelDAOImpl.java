@@ -29,5 +29,16 @@ public class HotelDAOImpl implements IHotelDAO{
     public List<Hotel> getHotels() {
         return session.createCriteria(Hotel.class).list();
     }
+
+    @Override
+    public Hotel addOrUpdate(Hotel hotel) {
+        return (Hotel) session.merge(hotel);
+    }
+
+    @Override
+    public void deleteDrzava(int id) {
+        Hotel hotel = (Hotel) session.createCriteria(Hotel.class).add(Restrictions.eq("hotelId", id)).uniqueResult();
+        session.delete(hotel);
+    }
     
 }
